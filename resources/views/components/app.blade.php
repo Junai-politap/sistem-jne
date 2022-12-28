@@ -10,7 +10,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>:: Crush On :: Home</title>
+    <title> Sistem JNE</title>
 
     <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="{{ url('public/template') }}/assets/plugins/bootstrap/css/bootstrap.min.css" />
