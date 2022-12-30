@@ -1,60 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Crush On The most popular Admin Dashboard template and ui kit">
-    <meta name="author" content="PuffinTheme the theme designer">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <title>JNE Terpadu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title> Sistem JNE</title>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{ url('public') }}/assets/images/favicon.ico">
 
-    <!-- Bootstrap Core and vandor -->
-    <link rel="stylesheet" href="{{ url('public/template') }}/assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link href="{{ url('public') }}/assets/plugins/tabulator/bootstrap/tabulator_bootstrap4.css" rel="stylesheet" type="text/css" />
 
-    <!-- Plugins css -->
-    <link rel="stylesheet" href="{{ url('public/template') }}/assets/plugins/charts-c3/c3.min.css" />
-    <link rel="stylesheet" href="{{ url('public/template') }}/assets/plugins/jvectormap/jvectormap-2.0.3.css" />
+    <!-- App css -->
+    <link href="{{ url('public') }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url('public') }}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Core css -->
-    <link rel="stylesheet" href="{{ url('public/template') }}/assets/css/main.css" />
-    <link rel="stylesheet" href="{{ url('public/template') }}assets/css/default.css" />
 </head>
 
-<body class="font-opensans">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-        </div>
-    </div>
+<body id="body" class="">
+    <!-- leftbar-tab-menu -->
 
-    <div id="main_content">
+    <x-template.sidebar/>
+    
 
-        <x-template.sidebar/>
+    <!-- end leftbar-tab-menu-->
 
-        <div class="page">
-           <x-template.header/>
-            <div class="section-body mt-4">
-                <div class="container-fluid">
-                    {{ $slot }}
-                </div>
-            </div>
+    <!-- Top Bar Start -->
+    
+    <x-template.header/>
+    
+    <!-- Top Bar End -->
+
+    <div class="page-wrapper">
+
+        <!-- Page Content-->
+        <div class="page-content-tab pt-4">
+
+            {{ $slot }}
+            <!-- container -->
+
+            <!--Start Rightbar-->
+            <!--Start Rightbar/offcanvas-->
+            <x-template.control-sidebar/>
+            <!--end Rightbar/offcanvas-->
+            <!--end Rightbar-->
+
+            <!--Start Footer-->
             <x-template.footer/>
+            <!--end footer-->
         </div>
+        <!-- end page content -->
     </div>
+    <!-- end page-wrapper -->
 
+    <!-- Javascript  -->
 
-    <script src="{{ url('public/template') }}/assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="{{ url('public') }}/assets/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ url('public') }}/assets/pages/analytics-index.init.js"></script>
 
-    <script src="{{ url('public/template') }}/assets/bundles/counterup.bundle.js"></script>
-    <script src="{{ url('public/template') }}/assets/bundles/apexcharts.bundle.js"></script>
-    <script src="{{ url('public/template') }}/assets/bundles/jvectormap2.bundle.js"></script>
+    <script src="{{ url('public') }}/assets/plugins/tabulator/tabulator.min.js"></script>
+   
+    <script src="{{ url('public') }}/assets/pages/datatable.init.js"></script>
+    <!-- App js -->
+    <script src="{{ url('public') }}/assets/js/app.js"></script>
 
-    <script src="{{ url('public/template') }}/assets/js/core.js"></script>
-    <script src="{{ url('public/template') }}assets/js/page/index.js"></script>
 </body>
+<!--end body-->
 
 </html>
