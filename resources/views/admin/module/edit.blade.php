@@ -1,105 +1,115 @@
 <x-module.admin>
     <div class="container-fluid">
+        <x-template.button.back-button url="admin/module" />
         <div class="row">
             <div class="col-md-12">
-                <x-template.button.back-button url="admin/pegawai" />
                 <div class="card">
                     <div class="card-header text-center">
                         <div class="col-md-12">
-                            <h2 class="card-title">Edit Data Pegawai</h2>
+                            <h2 class="card-title">Edit Module</h2>
                         </div>
                     </div>
+
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <form action="{{ url('admin/pegawai', $pegawai->id) }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    @method("PUT")
+                        <form action="{{ url('admin/module', $module->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method("PUT")
+                            <div class="row">
+                                <div class="col-lg-6">
+
                                     <div class="mb-3 row">
-                                        <label for="example-input" class="col-sm-3 col-form-label text-star">NUP
-                                            Pegawai</label>
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            App
+                                        </label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="nup" value="{{ $pegawai->nup }}">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="example-input" class="col-sm-3 col-form-label text-star">Nama
-                                            Pegawai</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="nama"
-                                                value="{{ $pegawai->nama }}">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="example-input" class="col-sm-3 col-form-label text-star">Tempat,
-                                            Tanggal Lahir</label>
-                                        <div class="col-sm-4">
-                                            <input class="form-control" type="text" name="tempat_lahir"
-                                            value="{{ $pegawai->tempat_lahir }}">
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <input class="form-control" type="date" name="tanggal_lahir" value="{{ $pegawai->tanggal_lahir }}">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="example-input" class="col-sm-3 col-form-label text-star">Email
-                                            Pegawai</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="email" name="email"
-                                            value="{{ $pegawai->email }}">
+                                            <input class="form-control" type="text" name="app" value="{{ $module->app }}">
                                         </div>
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label for="example-input"
-                                            class="col-sm-3 col-form-label text-star">Username</label>
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Title
+                                        </label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="username"
-                                            value="{{ $pegawai->username }}">
+                                            <input class="form-control" type="text" name="title" value="{{ $module->title }}">
                                         </div>
                                     </div>
+                                    <div class="mb-3 row">
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            URL
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="url" value="{{ $module->url }}">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Tag
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="tag" value="{{ $module->tag }}">
+                                        </div>
+                                    </div>
+                                    
+                                    
+
+                                </div>
+                                <div class="col-lg-6">
 
                                     <div class="mb-3 row">
-                                        <label for="example-input"
-                                            class="col-sm-3 col-form-label text-star">Password</label>
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Name
+                                        </label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="password" name="password">
+                                            <input class="form-control" type="text" name="name" value="{{ $module->name }}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="example-input"
-                                            class="col-sm-3 col-form-label text-star">Alamat</label>
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Subtitle
+                                        </label>
                                         <div class="col-sm-9">
-                                            <input class="form-control" type="text" name="alamat"
-                                            value="{{ $pegawai->alamat }}">
+                                            <input class="form-control" type="text" name="subtitle" value="{{ $module->subtitle }}">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Color
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="color" value="{{ $module->color }}">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="example-input" class="col-sm-3 col-form-label text-star">Foto
-                                            Pegawai</label>
-                                            <div class="col-md-4">
-                                                <img src="{{ url("public/$pegawai->foto") }}" class="img-fluid" style="object-fit: cover; position: static; width: 70%; height: 500px;">
-                                            </div>
-                                        <div class="col-sm-5">
-                                            <input class="form-control" type="file" name="foto" value="{{ $pegawai->foto }}"
-                                                accept=".jpg, .png, .jpeg">
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3 row">
-                                        <div class="col-md-3"></div>
+                                        <label for="example-input" class="col-sm-3 col-form-label text-end">
+                                            Menu
+                                        </label>
                                         <div class="col-sm-9">
-                                            <button class="btn btn-secondary" type="reset"><span class="fa fa-times"></span> Batal</button>
-                                        
-                                            <button class="btn btn-primary"><span class="fa fa-save"></span> Simpan</button>
+                                            <input class="form-control" type="text" name="menu" value="{{ $module->menu }}">
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
-                        </div>
+                            <div class="row">
+                                <div class="col-md-12 col-for-label text-end">
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary" type="reset"><span
+                                                class="fa fa-times"></span>
+                                            Batal</button>
+
+                                        <button class="btn btn-primary"><span class="fa fa-save"></span>
+                                            Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
 </x-module.admin>

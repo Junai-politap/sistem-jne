@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <x-template.button.back-button url="admin/pegawai" />
+                <x-template.button.back-button url="admin/module" />
                 <br>
                 <div class="card">
                     <div class="card-body">

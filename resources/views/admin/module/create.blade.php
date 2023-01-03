@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header text-center">
                         <div class="col-md-12">
-                            <h2 class="card-title">Tambah Data Pegawai</h2>
+                            <h2 class="card-title">Tambah Module</h2>
                         </div>
                     </div>
 

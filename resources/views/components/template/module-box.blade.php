@@ -20,7 +20,7 @@
         }
 
         a.box:hover {
-            background-color: black !important;
+            background-color: rgb(95, 72, 72) !important;
             font-size: 120%;
             border: 2px solid white;
             border-radius: 15px;

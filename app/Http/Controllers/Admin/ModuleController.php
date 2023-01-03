@@ -59,7 +59,7 @@ class ModuleController extends Controller
     }
 
     
-    public function update(Request $request, $id)
+    public function update(Module $module)
     {
         $module->app = request('app');
         $module->tag = request('tag');
