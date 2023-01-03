@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Template;
 
 use Illuminate\View\Component;
 
-class App extends Component
+class Sidebar extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +24,6 @@ class App extends Component
      */
     public function render()
     {
-        return view('components.app');
+        return view('components.template.sidebar');
     }
 }

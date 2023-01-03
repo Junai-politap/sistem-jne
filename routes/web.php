@@ -13,13 +13,11 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::prefix('admin')->group(function(){
     include "_/admin.php";
 });
+
+Route::get('check-role', [AuthController::class, 'checkRole']);
 
 
 Route::get('login', [AuthController::class, 'login'])->name('login');

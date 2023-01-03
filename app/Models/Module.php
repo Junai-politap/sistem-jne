@@ -2,23 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model as BaseModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Model;
+use App\Models\Role;
 
-
-class Model extends BaseModel
+class Module extends Model
 {
+    protected $table = "admin_module";
 
-	protected $keyType = 'string';
-    public $incrementing = false;
-
-    public static function boot()
+    public function Role()
     {
-        parent::boot();
-
-        static::creating(function ($item) {
-            $item->id = (string) Str::orderedUuid();
-        });
+        return $this->hasMany(Role::class, 'id_module');
     }
-
 }

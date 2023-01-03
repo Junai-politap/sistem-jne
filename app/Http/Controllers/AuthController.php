@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -11,69 +12,52 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function loginProcess()
     {
-        //
+        $userid = request('userid');
+        if (Str::contains($userid, '@')) {
+            $field = 'email';
+        } else {
+            $userid = str_replace(" ", "", $userid);
+            $strlen = Str::length($userid);
+            if ($strlen == 20) {
+                $field = 'nup';
+            
+            } else {
+                $field = 'username';
+            }
+        }
+        $credential = [
+            $field => request('userid'),
+            'password' => request('password')
+        ];
+        
+        
+        if (auth()->attempt($credential)) {
+                $user = auth()->user();
+                return $this->manageRedirect($user);
+            } else {
+                return view('auth.login', ['message' => 'Login Gagal']);
+            }
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function logout()
     {
-        //
+        auth()->logout();
+        return redirect('login');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function manageRedirect($user)
     {
-        //
+        $list_role = $user->role;
+        $firstRole = $list_role->first();
+        $url = $firstRole->module->url;
+        return redirect($url);
     }
+    
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+   
+    
 }

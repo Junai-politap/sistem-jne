@@ -25,7 +25,7 @@
 <body id="body" class="">
     <!-- leftbar-tab-menu -->
 
-    <x-template.sidebar/>
+    <x-template.sidebar :menu="$menu"/>
     
 
     <!-- end leftbar-tab-menu-->
@@ -40,14 +40,18 @@
 
         <!-- Page Content-->
         <div class="page-content-tab pt-4">
-
+            <div class="row">
+                <div class="col-md-12">
+                    <x-utils.notif />
+                </div>
+            </div>
             {{ $slot }}
             <!-- container -->
 
             <!--Start Rightbar-->
-            <!--Start Rightbar/offcanvas-->
+           
             <x-template.control-sidebar/>
-            <!--end Rightbar/offcanvas-->
+           
             <!--end Rightbar-->
 
             <!--Start Footer-->

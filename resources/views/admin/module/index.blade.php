@@ -7,7 +7,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h4 class="card-title">Data Pegawai</h4>
+                                <h4 class="card-title">Data Module</h4>
                             </div>
                             <!--end col-->
                             <div class="col-md-4">
@@ -17,7 +17,7 @@
                                     <button class="btn btn-outline-light btn-sm" type="button" id="wallet_search">
                                         <i class="las la-search text-secondary"></i>
                                     </button>
-                                    <a href="{{ url('admin/pegawai/create') }}" class="btn btn-primary"><span
+                                    <a href="{{ url('admin/module/create') }}" class="btn btn-primary"><span
                                             class="fa fa-plus"></span> Tambah
                                         Data</a>
                                 </div>
@@ -32,31 +32,31 @@
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Aksi</th>
-                                        <th class="text-center">Nama</th>
-                                        <th class="text-center">Email</th>
-                                        <th class="text-center">Alamat</th>
+                                        <th class="text-center">Nama Module</th>
+                                        <th class="text-center">Tag</th>
+                                        <th class="text-center">Jumlah Pegawai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($list_pegawai as $pegawai)
+                                    @foreach ($list_module as $module)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <x-template.button.info-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.info-button url="admin/module"
+                                                        id="{{ $module->id }}" />
 
-                                                    <x-template.button.edit-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.edit-button url="admin/module"
+                                                        id="{{ $module->id }}" />
 
-                                                    <x-template.button.delete-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.delete-button url="admin/module"
+                                                        id="{{ $module->id }}" />
 
                                                 </div>
                                             </td>
-                                            <td class="text-center">{{ $pegawai->nama }}</td>
-                                            <td class="text-center">{{ $pegawai->email }}</td>
-                                            <td class="text-justify">{{ $pegawai->alamat }}</td>
+                                            <td class="text-center">{{ $module->name }}</td>
+                                            <td class="text-center">{{ $module->tag }}</td>
+                                            <td class="text-justify">{{ $module->alamat }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

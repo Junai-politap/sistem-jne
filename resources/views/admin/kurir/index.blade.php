@@ -7,7 +7,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h4 class="card-title">Data Pegawai</h4>
+                                <h4 class="card-title">Data kurir</h4>
                             </div>
                             <!--end col-->
                             <div class="col-md-4">
@@ -17,7 +17,7 @@
                                     <button class="btn btn-outline-light btn-sm" type="button" id="wallet_search">
                                         <i class="las la-search text-secondary"></i>
                                     </button>
-                                    <a href="{{ url('admin/pegawai/create') }}" class="btn btn-primary"><span
+                                    <a href="{{ url('admin/kurir/create') }}" class="btn btn-primary"><span
                                             class="fa fa-plus"></span> Tambah
                                         Data</a>
                                 </div>
@@ -38,25 +38,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($list_pegawai as $pegawai)
+                                    @foreach ($list_kurir as $kurir)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <x-template.button.info-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.info-button url="admin/kurir"
+                                                        id="{{ $kurir->id }}" />
 
-                                                    <x-template.button.edit-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.edit-button url="admin/kurir"
+                                                        id="{{ $kurir->id }}" />
 
-                                                    <x-template.button.delete-button url="admin/pegawai"
-                                                        id="{{ $pegawai->id }}" />
+                                                    <x-template.button.delete-button url="admin/kurir"
+                                                        id="{{ $kurir->id }}" />
 
                                                 </div>
                                             </td>
-                                            <td class="text-center">{{ $pegawai->nama }}</td>
-                                            <td class="text-center">{{ $pegawai->email }}</td>
-                                            <td class="text-justify">{{ $pegawai->alamat }}</td>
+                                            <td class="text-center">{{ $kurir->nama }}</td>
+                                            <td class="text-center">{{ $kurir->email }}</td>
+                                            <td class="text-justify">{{ $kurir->alamat }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

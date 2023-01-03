@@ -1,20 +1,20 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Template\Button;
 
 use Illuminate\View\Component;
 
-class App extends Component
+class BackButton extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $menu;
-    public function __construct($menu)
+    public $url;
+    public function __construct($url)
     {
-        $this->menu = $menu;
+        $this->url = $url;
     }
 
     /**
@@ -24,6 +24,6 @@ class App extends Component
      */
     public function render()
     {
-        return view('components.app');
+        return view('components.template.button.back-button');
     }
 }

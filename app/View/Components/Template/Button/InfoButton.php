@@ -1,19 +1,23 @@
 <?php
 
-namespace App\View\Components\Template;
+namespace App\View\Components\Template\Button;
 
 use Illuminate\View\Component;
 
-class ControlSiderbar extends Component
+class InfoButton extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+
+    public $url;
+    public $id;
+    public function __construct($url, $id)
     {
-        //
+        $this->url = $url;
+        $this->id = $id;
     }
 
     /**
@@ -23,6 +27,6 @@ class ControlSiderbar extends Component
      */
     public function render()
     {
-        return view('components.template.control-siderbar');
+        return view('components.template.button.info-button');
     }
 }

@@ -1,20 +1,19 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Template\Module;
 
 use Illuminate\View\Component;
 
-class App extends Component
+class admin extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public $menu;
-    public function __construct($menu)
+    public function __construct()
     {
-        $this->menu = $menu;
+        //
     }
 
     /**
@@ -24,6 +23,6 @@ class App extends Component
      */
     public function render()
     {
-        return view('components.app');
+        return view('components.template.module.admin');
     }
 }
