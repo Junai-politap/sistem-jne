@@ -26,7 +26,7 @@
                             class="ti ti-power font-16 me-1 align-text-bottom"></i> Logout</a>
                 </div>
             </li>
-            
+            data
             <li class="notification-list">
                 <a class="nav-link arrow-none nav-icon offcanvas-btn" href="#" data-bs-toggle="offcanvas"
                     data-bs-target="#Appearance" role="button" aria-controls="Rightbar">
