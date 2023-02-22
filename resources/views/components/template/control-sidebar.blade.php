@@ -6,41 +6,26 @@
     </div>
     <div class="offcanvas-body">
         <div class="row">
-            <div class="col-md-6">
-                <a href="">
+            @foreach (auth()->user()->role as $role)
+                <div class="col-md-6">
                     <div class="row content-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row d-flex content-center">
-                                    <div class="col-md-12 text-center">
-                                        <p class="text-dark mb-0 fw-semibold">Admin</p>
-                                        <i class="ti ti-users font-20 align-self-center text-muted"></i>
-                                        <h5 class="my-1 font-17 fw-bold">Pegawai</h5>
-                                    </div>
-                                </div>
+                        <div class="row d-flex content-center">
+                            <div class="col-md-12 text-center"
+                                style=" display:flex; flex-wrap: wrap; justify-content: space-between; gap:10px;">
+                                <x-template.module-box color="{{ $role->module->color }}" url="{{ $role->module->url }}"
+                                    title="{{ $role->module->title }}" subtitle="{{ $role->module->subtitle }}" />
                             </div>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="">
-                    <div class="row content-center">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row d-flex content-center">
-                                    <div class="col-md-12 text-center">
-                                        <p class="text-dark mb-0 fw-semibold">Admin</p>
-                                        <i class="ti ti-users font-20 align-self-center text-muted"></i>
-                                        <h5 class="my-1 font-17 fw-bold">Pegawai</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 
 </div>
+<style>
+    a {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+</style>

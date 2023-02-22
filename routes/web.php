@@ -19,7 +19,7 @@ Route::prefix('admin')->group(function(){
 
 Route::get('check-role', [AuthController::class, 'checkRole']);
 
-
+Route::get('/', [AuthController::class, 'login'])->name('login');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');

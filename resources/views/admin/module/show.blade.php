@@ -77,13 +77,15 @@
                                         <tr>
                                             <td class="text-center">{{ $no++ }}</td>
                                             <td class="text-center">
-                                                <a onclick="return confirm('Yakin ingin menghapus data ini?')" href="{{ url('admin/module/role', $role->id) }}" class="btn btn-danger">
+                                                <a onclick="return confirm('Yakin ingin menghapus data ini?')"
+                                                    href="{{ url('admin/module/role', $role->id) }}"
+                                                    class="btn btn-danger">
                                                     <span class="fa fa-trash"></span> Hapus
                                                 </a>
                                             </td>
                                             <td class="text-center">{{ $role->pegawai->nup }}</td>
                                             <td class="text-left">{{ $role->pegawai->nama }}</td>
-                                            
+
                                         </tr>
                                     @endforeach
                                 </tbody>
